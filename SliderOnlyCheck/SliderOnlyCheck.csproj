@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\MapsetVerifierFramework\MapsetVerifierFramework.csproj" />
-    <ProjectReference Include="..\MapsetParser\MapsetParser.csproj" />
+    <ProjectReference Include="..\..\MapsetVerifierFramework\MapsetVerifierFramework.csproj" />
+    <ProjectReference Include="..\..\MapsetParser\MapsetParser.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
