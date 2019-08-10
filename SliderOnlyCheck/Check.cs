@@ -75,10 +75,10 @@ namespace SliderOnlyCheck
 
                     if (last_tail != 0) {
                         duration += hitObject.time - last_tail;
-                        last_tail = hitObject.GetEndTime();
                     }
 
                     duration += hitObject.GetEndTime() - hitObject.time;
+                    last_tail = hitObject.GetEndTime();
                 } else {
                     if (duration > 5000.0) {
                         yield return new Issue(GetTemplate("Warning"), aBeatmap, Timestamp.Get(first_object), $"{(int)duration/1000}");
