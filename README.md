@@ -3,11 +3,26 @@ A Mapset Verifier plugin to check slider only sections on Easy and Normal diffs,
 ...and to give a quick overview on how to create a plugin.
 
 ## Building
-These steps assume you already have [.NET Core SDK](https://dotnet.microsoft.com) installed.
+These steps assume you already have [.NET Core SDK](https://dotnet.microsoft.com) installed.  
+Oh right these build steps are for linux if you're using windows just substitute `mkdir` to `md`
 ```bash
-    $ git clone https://github.com/rorre/MV-SliderOnly.git # or git@github.com:rorre/MV-SliderOnly.git whichever you like
-    $ cd MV-SliderOnly
-    $ dotnet build
+$ mkdir MV-env
+$ cd MV-env
+
+# Clone every dependencies
+$ git clone https://github.com/Naxesss/MapsetParser.git
+$ git clone https://github.com/Naxesss/MapsetVerifierFramework.git
+
+# Register dotnet app to our dependency because Naxess doesnt seem to register it lol
+# and their dependency too
+$ cd MapsetParser && dotnet new classlib && dotnet add package System.Numerics.Vectors
+$ cd ../MapsetVerifierFramework && dotnet new classlib
+$ dotnet add package ManagedBass && dotnet add package NAudio && dotnet add package TagLib.Portable
+
+# Clone our thing
+$ cd ../ & git clone https://github.com/rorre/MV-SliderOnly.git
+$ cd MV-SliderOnly/SliderOnlyChecker
+$ dotnet build
 ```
 
 ## Installing to MV
